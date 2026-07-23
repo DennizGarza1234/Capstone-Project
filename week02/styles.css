@@ -1,0 +1,207 @@
+/* ==========================
+   Cascade Layer
+========================== */
+
+@layer tokens, base, components;
+
+/* ==========================
+   TOKENS
+========================== */
+
+@layer tokens {
+
+:root {
+
+/* Light Mode */
+
+--color-bg: oklch(98% 0.01 260);
+
+--color-surface: oklch(95% 0.02 260);
+
+--color-text: oklch(20% 0.02 260);
+
+--color-primary: oklch(62% 0.22 260);
+
+--color-secondary: oklch(72% 0.12 120);
+
+/* Dark Mode */
+
+--dark-bg: oklch(18% 0.02 260);
+
+--dark-surface: oklch(25% 0.02 260);
+
+--dark-text: oklch(95% 0.01 260);
+
+/* Typography */
+
+--size-base: 1rem;
+
+--size-heading-md: clamp(
+1.5rem,
+1.15rem + 1.5vw,
+2.25rem
+);
+
+--size-heading-lg: clamp(
+1.75rem,
+1.31rem + 1.88vw,
+3rem
+);
+
+/* Spacing */
+
+--space-xs: .5rem;
+
+--space-sm: 1rem;
+
+--space-md: 2rem;
+
+--space-lg: 4rem;
+
+}
+
+}
+
+/* ==========================
+   BASE
+========================== */
+
+@layer base {
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:var(--color-bg);
+
+color:var(--color-text);
+
+padding:var(--space-lg);
+
+line-height:1.6;
+
+}
+
+h1{
+
+font-size:var(--size-heading-lg);
+
+margin-bottom:var(--space-md);
+
+}
+
+h2{
+
+font-size:var(--size-heading-md);
+
+margin:var(--space-md) 0;
+
+}
+
+p{
+
+font-size:var(--size-base);
+
+}
+
+}
+
+/* ==========================
+   COMPONENTS
+========================== */
+
+@layer components {
+
+.palette{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:var(--space-md);
+
+margin-top:var(--space-md);
+
+}
+
+.color-card{
+
+padding:var(--space-md);
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+.primary{
+
+background:var(--color-primary);
+
+color:white;
+
+}
+
+.secondary{
+
+background:var(--color-secondary);
+
+}
+
+.background{
+
+background:var(--color-bg);
+
+border:2px solid var(--color-text);
+
+}
+
+.text{
+
+background:var(--color-text);
+
+color:white;
+
+}
+
+.spacing-demo{
+
+background:var(--color-primary);
+
+color:white;
+
+margin-bottom:var(--space-md);
+
+}
+
+.xs{
+
+padding:var(--space-xs);
+
+}
+
+.sm{
+
+padding:var(--space-sm);
+
+}
+
+.md{
+
+padding:var(--space-md);
+
+}
+
+.lg{
+
+padding:var(--space-lg);
+
+}
+
+}
