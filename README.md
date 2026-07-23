@@ -38,6 +38,10 @@ my-capstone-project/
 ├── week02/
 │   ├── index.html
 │   └── styles.css
+|
+├── week03/
+│   ├── index.html
+│   └── styles.css
 │
 └── README.md
 ```
