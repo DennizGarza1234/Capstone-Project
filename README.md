@@ -96,10 +96,6 @@ my-capstone-project/
 │   ├── index.html
 │   └── styles.css
 │
-├── week03/
-│   ├── index.html
-│   └── styles.css
-│
 └── README.md
 ```
 
@@ -398,8 +394,4 @@ Denniz Garza
 
 BAS Application Development
 
-Capstone Project
-
-Week 02 – Design System Foundation
-
-Week 03 – Structural Frames & Semantic Navigation
+Week 02 Capstone Project
