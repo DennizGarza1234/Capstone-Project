@@ -1,0 +1,661 @@
+/* =====================================================
+   WEEK 04 - RETRO GAME DISCOVERY PORTAL
+   Design Tokens + Responsive Asymmetric Grid
+===================================================== */
+
+@layer tokens, base, layout, components;
+
+/* =====================================================
+   TOKENS
+===================================================== */
+
+@layer tokens {
+
+:root{
+
+    /* Light Theme */
+
+    --color-bg: oklch(98% 0.01 250);
+    --color-surface: oklch(95% 0.02 250);
+    --color-primary: oklch(64% 0.20 260);
+    --color-secondary: oklch(74% 0.12 145);
+    --color-text: oklch(22% 0.02 250);
+    --color-border: oklch(86% 0.02 250);
+
+    /* Dark Theme */
+
+    --dark-bg: oklch(18% 0.02 250);
+    --dark-surface: oklch(25% 0.02 250);
+    --dark-text: oklch(95% 0.01 250);
+
+    /* Typography */
+
+    --size-base: 1rem;
+
+    --size-heading-md:
+        clamp(
+            1.5rem,
+            1.2rem + 1vw,
+            2.2rem
+        );
+
+    --size-heading-lg:
+        clamp(
+            1.75rem,
+            1.3rem + 2vw,
+            3rem
+        );
+
+    /* Spacing */
+
+    --space-xs:.5rem;
+    --space-sm:1rem;
+    --space-md:2rem;
+    --space-lg:4rem;
+
+    --radius:16px;
+
+    --shadow:
+        0 10px 30px
+        rgba(0,0,0,.12);
+
+}
+
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+
+@layer base{
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--color-bg);
+
+    color:
+        var(--color-text);
+
+    line-height:1.6;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+button{
+
+    cursor:pointer;
+    border:none;
+
+}
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+@layer layout{
+
+.site-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:var(--space-md);
+
+    padding:var(--space-md);
+
+    background:var(--color-primary);
+
+    color:white;
+
+}
+
+.logo h1{
+
+    font-size:
+        var(--size-heading-lg);
+
+}
+
+.logo p{
+
+    margin-top:.5rem;
+
+}
+
+.main-nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:var(--space-md);
+
+}
+
+.main-nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.main-nav a:hover{
+
+    text-decoration:underline;
+
+}
+
+}
+
+/* =====================================================
+   SEARCH BAR
+===================================================== */
+
+.search-bar{
+
+    display:flex;
+
+    gap:var(--space-sm);
+
+    padding:var(--space-md);
+
+    background:var(--color-surface);
+
+}
+
+.search-bar input{
+
+    flex:1;
+
+    padding:var(--space-sm);
+
+    border:1px solid var(--color-border);
+
+    border-radius:8px;
+
+    font-size:1rem;
+
+}
+
+.search-bar button{
+
+    padding:
+        .9rem 1.5rem;
+
+    background:
+        var(--color-primary);
+
+    color:white;
+
+    border-radius:8px;
+
+}
+
+.search-bar button:hover{
+
+    opacity:.9;
+
+}
+
+/* =====================================================
+   PAGE LAYOUT
+===================================================== */
+
+.page-layout{
+
+    display:grid;
+
+    grid-template-columns:
+
+        260px
+        1fr;
+
+    gap:var(--space-md);
+
+    padding:var(--space-md);
+
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+
+    background:
+
+        var(--color-surface);
+
+    padding:
+
+        var(--space-md);
+
+    border-radius:
+
+        var(--radius);
+
+    box-shadow:
+
+        var(--shadow);
+
+}
+
+.sidebar h2{
+
+    margin-bottom:
+
+        var(--space-md);
+
+}
+
+.filter-group{
+
+    margin-bottom:
+
+        var(--space-lg);
+
+}
+
+.filter-group h3{
+
+    margin-bottom:
+
+        var(--space-sm);
+
+}
+
+.filter-group label{
+
+    display:block;
+
+    margin-bottom:
+
+        .75rem;
+
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid-container{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            auto-fit,
+            minmax(
+                260px,
+                1fr
+            )
+        );
+
+    grid-auto-flow:dense;
+
+    gap:
+
+        var(--space-md);
+
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card{
+
+    background:
+
+        var(--color-surface);
+
+    border:
+
+        1px solid
+        var(--color-border);
+
+    border-radius:
+
+        var(--radius);
+
+    padding:
+
+        var(--space-md);
+
+    box-shadow:
+
+        var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:
+
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+.card:hover{
+
+    transform:
+
+        translateY(-6px);
+
+    box-shadow:
+
+        0 20px 40px
+        rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+    margin-bottom:
+
+        var(--space-sm);
+
+    font-size:
+
+        var(--size-heading-md);
+
+}
+
+.card p{
+
+    margin-bottom:
+
+        var(--space-md);
+
+}
+
+.card button{
+
+    align-self:flex-start;
+
+    background:
+
+        var(--color-primary);
+
+    color:white;
+
+    padding:
+
+        .8rem 1.4rem;
+
+    border-radius:
+
+        8px;
+
+}
+
+.card button:hover{
+
+    background:
+
+        var(--color-secondary);
+
+}
+
+/* =====================================================
+   HERO CARD
+===================================================== */
+
+.hero-card{
+
+    grid-column:
+
+        span 2;
+
+    grid-row:
+
+        span 2;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--color-primary),
+
+            var(--color-secondary)
+
+        );
+
+    color:white;
+
+}
+
+.hero-card h2{
+
+    font-size:
+
+        var(--size-heading-lg);
+
+    margin-bottom:
+
+        var(--space-sm);
+
+}
+
+.hero-card p{
+
+    margin:
+
+        var(--space-md)
+        0;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:
+
+        .35rem
+        .8rem;
+
+    border-radius:
+
+        50px;
+
+    background:white;
+
+    color:var(--color-primary);
+
+    font-weight:bold;
+
+    margin-bottom:
+
+        var(--space-md);
+
+}
+
+.details{
+
+    list-style:none;
+
+    margin-bottom:
+
+        var(--space-md);
+
+}
+
+.details li{
+
+    margin-bottom:
+
+        .5rem;
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:
+
+        var(--space-lg);
+
+    margin-top:
+
+        var(--space-lg);
+
+    background:
+
+        var(--color-primary);
+
+    color:white;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1000px){
+
+.page-layout{
+
+    grid-template-columns:
+        1fr;
+
+}
+
+.sidebar{
+
+    order:2;
+
+}
+
+main{
+
+    order:1;
+
+}
+
+.hero-card{
+
+    grid-column:
+        span 2;
+
+}
+
+}
+
+@media (max-width:700px){
+
+.main-nav ul{
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+}
+
+.search-bar{
+
+    flex-direction:column;
+
+}
+
+.grid-container{
+
+    grid-template-columns:
+        1fr;
+
+}
+
+.hero-card{
+
+    grid-column:auto;
+
+    grid-row:auto;
+
+}
+
+.site-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+}
+
+@media (prefers-color-scheme: dark){
+
+body{
+
+    background:
+        var(--dark-bg);
+
+    color:
+        var(--dark-text);
+
+}
+
+.sidebar,
+.card,
+.search-bar{
+
+    background:
+        var(--dark-surface);
+
+    border-color:
+        rgba(255,255,255,.08);
+
+}
+
+.search-bar input{
+
+    background:
+        var(--dark-bg);
+
+    color:
+        var(--dark-text);
+
+}
+
+}
