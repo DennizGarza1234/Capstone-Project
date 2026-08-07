@@ -1,87 +1,98 @@
-# Retro Game Discovery Portal – Capstone Project
+# 🎮 Retro Game Discovery Portal
 
-## Project Description
+## BAS Application Development Capstone Project
 
-This project is my Capstone Project for the BAS Application Development program. The selected project archetype is:
-
-**C: Curation & Discovery Portal**
-
-The final application will become a **Retro Game Discovery Portal** where users can browse, discover, and explore classic video games from different consoles, genres, and time periods.
-
-The project is being developed incrementally through weekly milestones. Each week builds upon the previous foundation to create a complete application experience.
+**Author:** Denniz Garza
 
 ---
 
-# Week 02 – Design System Foundation
+# Project Overview
 
-## Overview
+The **Retro Game Discovery Portal** is my capstone project for the BAS Application Development program. The selected project archetype is:
 
-Week 02 focused on creating the design system foundation that will support the rest of the project.
+**Archetype C – Curation & Discovery Portal**
 
-The design system demonstrates modern CSS techniques including:
+The goal of this project is to create a modern web application where users can browse, discover, and explore classic video games from different consoles, genres, publishers, and release years.
 
-- OKLCH color tokens
+The project is being developed incrementally through weekly milestones. Each week's assignment builds upon the previous week's work, preserving earlier versions while introducing new concepts and technologies.
+
+Throughout the project I am applying modern HTML5, CSS3, responsive design, accessibility, and contemporary layout techniques to produce a professional-quality web application.
+
+---
+
+# Weekly Milestones
+
+## Week 02 – Design System Foundation
+
+Week 02 focused on creating the reusable design system that powers the entire application.
+
+Implemented features include:
+
+- OKLCH color palette
 - Light and Dark Mode color variables
 - Fluid typography using `clamp()`
 - Relative spacing tokens using `rem`
-- CSS Cascade Layers (`@layer`)
-- Responsive layout principles
-- CSS custom properties
+- CSS Custom Properties
+- CSS Cascade Layers
+- Responsive design principles
+- WCAG AA color contrast considerations
 
-The design system serves as the foundation for future project development by creating reusable colors, spacing, and typography rules.
+The design system provides reusable colors, typography, spacing, and styling rules that are used throughout every future milestone.
 
 ---
 
-# Week 03 – Structural Frames & Semantic Navigation
+## Week 03 – Structural Frames & Semantic Navigation
 
-## Overview
+Week 03 expanded the design system into the structural framework of the application.
 
-Week 03 expanded the design system into the physical structure of the Retro Game Discovery Portal.
+The Retro Game Discovery Portal now includes:
 
-The goal of this milestone was to create a complete visual layout wireframe without adding the final application content.
-
-The layout follows:
-
-**Archetype C: Curation & Discovery Portal**
-
-The structural frame includes:
-
-- A persistent header banner
+- Semantic HTML5 layout
+- Header banner
 - Primary navigation
-- Left-side filter rail
-- Main game catalog area
-- Footer section
-
-The layout was created using semantic HTML5 elements and CSS Grid to create an accessible and responsive application foundation.
-
----
-
-# Features
-
-## Week 02 Features
-
-- Responsive typography using `clamp()`
-- Accessible color palette using `oklch()`
-- WCAG AA-friendly contrast considerations
-- CSS custom properties (design tokens)
-- Reusable spacing system
-- CSS Cascade Layers for organized styling
-- Responsive design foundation
-
----
-
-## Week 03 Features
-
-- Semantic HTML5 landmarks
-- CSS Grid structural layout
-- Responsive viewport-based design
-- Application header system
-- Primary navigation
-- Filter sidebar framework
+- Left-side filter sidebar
 - Main catalog content area
-- Footer structure
-- Keyboard-accessible navigation focus states
-- Mobile responsive layout behavior
+- Footer
+- Responsive CSS Grid layout
+
+The goal of Week 03 was to establish the complete page architecture before adding application content.
+
+---
+
+## Week 04 – Responsive Asymmetric Grid
+
+Week 04 transforms the empty catalog area into a responsive editorial-style layout.
+
+This milestone introduces:
+
+- Asymmetric CSS Grid
+- Featured Hero Card
+- Five responsive content cards
+- Grid auto-placement
+- Modern responsive layout techniques
+- Responsive card hierarchy
+- Dynamic visual balance
+
+The featured game card spans multiple columns and rows while supporting cards automatically fill the remaining space using CSS Grid.
+
+---
+
+# Week 04 Features
+
+- Responsive asymmetric CSS Grid
+- Hero card spanning multiple columns and rows
+- Five content cards
+- Search header
+- Filter sidebar
+- Responsive navigation
+- Fluid typography using `clamp()`
+- CSS Grid auto-placement
+- `grid-auto-flow: dense`
+- `minmax()` responsive columns
+- Fractional (`fr`) grid units
+- OKLCH color system
+- CSS Cascade Layers
+- Design Token architecture
 
 ---
 
@@ -91,125 +102,168 @@ The layout was created using semantic HTML5 elements and CSS Grid to create an a
 my-capstone-project/
 │
 ├── index.html
+├── README.md
 │
 ├── week02/
 │   ├── index.html
 │   └── styles.css
 │
-└── README.md
+├── week03/
+│   ├── index.html
+│   └── styles.css
+│
+└── week04/
+    ├── index.html
+    └── styles.css
 ```
 
 ---
 
 # Application Layout
 
-The Week 03 layout follows the Curation Portal archetype.
-
 ## Desktop Layout
 
 ```
-------------------------------------------------
-|                  HEADER                      |
-|        Branding + Primary Navigation         |
-------------------------------------------------
-|              |                               |
-|   FILTER     |                               |
-|   SIDEBAR    |        GAME CATALOG           |
-|              |                               |
-------------------------------------------------
-|                  FOOTER                      |
-------------------------------------------------
+-------------------------------------------------------------
+|                        HEADER                             |
+|        Logo • Navigation • Search                        |
+-------------------------------------------------------------
+|            |                                              |
+|  FILTER    |        FEATURED HERO CARD                    |
+|  SIDEBAR   |        (Spans 2 Columns / 2 Rows)            |
+|            |---------------------------|------------------|
+|            |   New Discoveries         | Highest Rated    |
+|            |---------------------------|------------------|
+|            | Recently Played           | Community Picks  |
+-------------------------------------------------------------
+|                        FOOTER                             |
+-------------------------------------------------------------
 ```
+
+---
+
+## Tablet Layout
+
+```
+-------------------------------------
+|             HEADER                |
+-------------------------------------
+|            FILTERS                |
+-------------------------------------
+|         FEATURED GAME             |
+-------------------------------------
+|      NEW DISCOVERIES              |
+-------------------------------------
+|       HIGHEST RATED               |
+-------------------------------------
+|     RECENTLY PLAYED               |
+-------------------------------------
+|    COMMUNITY FAVORITES            |
+-------------------------------------
+|            FOOTER                 |
+-------------------------------------
+```
+
+---
 
 ## Mobile Layout
 
 ```
 ------------------------
-|        HEADER        |
+|       HEADER         |
 ------------------------
-|       FILTERS        |
+|      SEARCH          |
 ------------------------
-|       CATALOG        |
+|      FILTERS         |
 ------------------------
-|       FOOTER         |
+|    FEATURED GAME     |
+------------------------
+|      CARD 2          |
+------------------------
+|      CARD 3          |
+------------------------
+|      CARD 4          |
+------------------------
+|      CARD 5          |
+------------------------
+|      FOOTER          |
 ------------------------
 ```
 
-The layout automatically adjusts based on screen size using CSS Grid and responsive media queries.
+The layout automatically adapts to different screen sizes using CSS Grid, responsive media queries, and fluid sizing techniques.
 
 ---
 
 # Semantic HTML Structure
 
-The project uses semantic HTML5 landmarks instead of relying on generic container elements.
-
-Implemented structural elements:
+The project uses semantic HTML5 landmarks to improve accessibility and maintainability.
 
 | Element | Purpose |
 |---------|---------|
-| `<header>` | Contains branding and application header content |
-| `<nav>` | Provides primary and secondary navigation links |
-| `<main>` | Contains the central game catalog area |
-| `<aside>` | Provides filtering and supporting information |
-| `<footer>` | Contains copyright and secondary links |
+| `<header>` | Branding and application header |
+| `<nav>` | Primary navigation |
+| `<main>` | Main game discovery content |
+| `<aside>` | Search filters |
+| `<section>` | Organized content groups |
+| `<article>` | Individual game cards |
+| `<footer>` | Copyright and project information |
 
-This structure improves accessibility, organization, and future maintainability.
+Using semantic elements improves accessibility, SEO, readability, and long-term maintainability.
 
 ---
 
 # CSS Layout System
 
-The Week 03 structural layout uses CSS Grid.
+The project uses several modern CSS layout techniques.
 
-The layout:
+## CSS Grid
 
-- Occupies the full viewport height using `100dvh`
-- Uses Grid template areas
-- Uses responsive columns
-- Uses Week 02 spacing variables
-- Uses OKLCH color variables
-- Maintains reusable CSS architecture
+Used for:
 
-Example Grid structure:
+- Overall page layout
+- Asymmetric game card layout
+- Responsive content organization
+
+Example:
 
 ```css
-grid-template-areas:
-    "header header"
-    "aside main"
-    "footer footer";
+.grid-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-auto-flow:dense;
+    gap:var(--space-md);
+}
 ```
 
 ---
 
-# How to Run
+## Hero Card
 
-## Option 1 (Recommended)
+The featured game card establishes visual hierarchy.
 
-Open the deployed GitHub Pages website.
-
-## Option 2
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```css
+.hero-card{
+    grid-column:span 2;
+    grid-row:span 2;
+}
 ```
 
-Open the project folder.
+---
 
-Open either file in a modern browser:
+## Design Tokens
 
-```
-week02/index.html
-```
+All spacing, colors, typography, and sizing are powered using reusable CSS Custom Properties.
 
-or
+Examples include:
 
-```
-week03/index.html
-```
+- `--space-sm`
+- `--space-md`
+- `--space-lg`
+- `--color-primary`
+- `--color-surface`
+- `--color-text`
 
-No installation, frameworks, or dependencies are required.
+This ensures visual consistency throughout the application.
 
 ---
 
@@ -217,69 +271,132 @@ No installation, frameworks, or dependencies are required.
 
 - HTML5
 - CSS3
-- CSS Custom Properties
-- OKLCH Color Space
-- CSS Cascade Layers
 - CSS Grid
+- Flexbox
+- CSS Custom Properties
+- CSS Cascade Layers
+- OKLCH Color Space
 - Responsive Web Design
 - Semantic HTML5
 - Fluid Typography (`clamp()`)
-- Accessibility-focused CSS
+- Git
+- GitHub
+- GitHub Pages
+
+---
+
+# How to Run
+
+## Option 1 (Recommended)
+
+Visit the deployed GitHub Pages website.
+
+## Option 2
+
+Clone the repository.
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```
+
+Open the project folder.
+
+Open one of the following files in a modern web browser:
+
+```
+week02/index.html
+```
+
+```
+week03/index.html
+```
+
+```
+week04/index.html
+```
+
+No installation, frameworks, or dependencies are required.
 
 ---
 
 # Testing & Verification
 
-The project was tested using different viewport sizes, zoom levels, and accessibility checks.
+The Retro Game Discovery Portal was tested across multiple browsers, viewport sizes, and zoom levels to ensure a responsive and accessible user experience.
+
+Testing focused on:
+
+- Responsive layout behavior
+- CSS Grid functionality
+- Fluid typography
+- Consistent spacing
+- Keyboard accessibility
+- Responsive navigation
+- Hero card behavior
+- CSS Grid auto-placement
+- Mobile responsiveness
+- Browser zoom compatibility
 
 ---
 
 # Normal Test Cases
 
-## Test Case 1 — Responsive Typography
+## Test Case 1 – Responsive Typography
 
 ### Action
 
-Resize the browser window.
+Resize the browser window from desktop width to tablet and mobile sizes.
 
 ### Expected Result
 
-- Heading sizes smoothly scale.
-- Text remains readable.
-- No layout breaking occurs.
+- Headings resize smoothly using `clamp()`.
+- Paragraph text remains readable.
+- No overlapping or clipped text occurs.
+
+### Result
+
+✅ Passed
 
 ---
 
-## Test Case 2 — Responsive Grid Layout
+## Test Case 2 – Asymmetric Grid Layout
 
 ### Action
 
-Resize the browser from desktop width to smaller screen sizes.
+Load the page on a desktop-sized viewport.
 
 ### Expected Result
 
-- Sidebar and catalog adjust correctly.
-- Content does not overlap.
-- Layout remains organized.
+- The featured game card spans two columns and two rows.
+- Supporting cards automatically fill the remaining grid.
+- Layout maintains visual hierarchy.
+
+### Result
+
+✅ Passed
 
 ---
 
-## Test Case 3 — Keyboard Navigation
+## Test Case 3 – Responsive Navigation & Sidebar
 
 ### Action
 
-Use the Tab key to navigate through links.
+Navigate through the page using the navigation menu and filter sidebar.
 
 ### Expected Result
 
-- Navigation links receive visible focus indicators.
-- Focus order follows the document structure.
+- Navigation remains accessible.
+- Sidebar aligns correctly beside the content on larger screens.
+- Layout adapts correctly as the viewport changes.
+
+### Result
+
+✅ Passed
 
 ---
 
 # Edge Test Cases
 
-## Test Case 4 — 200% Browser Zoom
+## Test Case 4 – Browser Zoom (200%)
 
 ### Action
 
@@ -287,45 +404,73 @@ Increase browser zoom to 200%.
 
 ### Expected Result
 
-- Text remains readable.
-- Layout remains functional.
-- No content becomes inaccessible.
+- Typography scales appropriately.
+- Cards remain readable.
+- No overlapping or inaccessible content.
+
+### Result
+
+✅ Passed
 
 ---
 
-## Test Case 5 — Small Mobile Viewport
+## Test Case 5 – Mobile Viewport (320px)
 
 ### Action
 
-Resize browser to approximately 320px width.
+Resize the browser to approximately 320 pixels wide.
 
 ### Expected Result
 
-- Layout switches to a single-column structure.
-- Sidebar moves above the catalog.
-- No horizontal scrolling occurs.
+- Cards stack into a single column.
+- Sidebar moves above the content.
+- No horizontal scrolling.
+- Hero card returns to a standard card size.
+
+### Result
+
+✅ Passed
 
 ---
 
-## Test Case 6 — Large Desktop Viewport
+## Test Case 6 – Grid Auto Placement
 
 ### Action
 
-Resize browser to a large desktop size.
+Resize the browser through several widths between desktop and tablet.
 
 ### Expected Result
 
-- Layout expands correctly.
-- Structural sections remain aligned.
-- Content boundaries remain intact.
+- CSS Grid automatically reorganizes cards.
+- `grid-auto-flow: dense` minimizes empty spaces.
+- Cards remain aligned without awkward gaps.
+
+### Result
+
+✅ Passed
+
+---
+
+# Accessibility
+
+Accessibility was considered throughout development by implementing:
+
+- Semantic HTML5 landmarks
+- Responsive typography using `clamp()`
+- Relative sizing with `rem`
+- High-contrast OKLCH color palette
+- Keyboard-accessible navigation
+- Responsive layouts
+- Readable spacing and line height
+- Consistent heading hierarchy
 
 ---
 
 # AI Assistance
 
-Generative AI (ChatGPT) was used as a development assistant to help plan, explain, and review implementation decisions.
+Generative AI (ChatGPT) was used as a development assistant to help explain concepts, review code, and generate draft implementations.
 
-All AI-generated suggestions and code were reviewed, modified, tested, and integrated by the author.
+All AI-generated code and recommendations were reviewed, modified, tested, and integrated by the author before submission.
 
 ---
 
@@ -333,7 +478,7 @@ All AI-generated suggestions and code were reviewed, modified, tested, and integ
 
 ## Prompt 1
 
-```
+```text
 I am building a retro gaming curation portal in OKLCH color space. I want a dark/light mode setup. Can you output a CSS :root block with color variables utilizing oklch()? The background and text colors must pass WCAG AA contrast guidelines. Please explain the math behind the Lightness (L) levels you chose for both light and dark mode to guarantee contrast.
 ```
 
@@ -341,7 +486,7 @@ I am building a retro gaming curation portal in OKLCH color space. I want a dark
 
 ## Prompt 2
 
-```
+```text
 I need a CSS custom property for a main title font size that scales fluidly. It should have a minimum size of 1.75rem at 375px viewport width, and a maximum size of 3rem at 1440px viewport width. Can you write the clamp() property using a mix of rem and vw, and break down exactly how the middle viewport-width expression is calculated?
 ```
 
@@ -351,7 +496,7 @@ I need a CSS custom property for a main title font size that scales fluidly. It 
 
 ## Prompt 1
 
-```
+```text
 I am building a Curation & Discovery Portal for my capstone project called Retro Game Discovery Portal.
 
 Write the semantic HTML5 layout wrapper utilizing header, nav, main, aside, and footer.
@@ -365,10 +510,28 @@ Use low-specificity CSS class selectors and bind the padding, gaps, and backgrou
 
 ## Prompt 2
 
-```
+```text
 My aside element is collapsing to zero width when the screen gets narrow, and it is causing a horizontal scrollbar.
 
 Can you explain why this is happening within the CSS Grid formatting context and how I can set a responsive minimum width constraint on my sidebar using minmax()?
+```
+
+---
+
+# Week 04 AI Prompts
+
+## Prompt 1
+
+```text
+I have a main content area containing 5 cards. I want to build a CSS Grid that is asymmetric. On desktop, I want a 3-column layout where the first card is a hero card that spans 2 columns and 2 rows, while the rest span 1 column. Write the CSS using fractional units (fr) and grid-template-areas (or explicit grid spans). Make sure it scales nicely down to a single column on mobile viewports.
+```
+
+---
+
+## Prompt 2
+
+```text
+When I shrink my viewport to tablet sizes, my asymmetric grid leaves a large empty space because of the hero card span rules. Analyze my CSS Grid layout and show me how to use CSS Grid's auto-placement rules, like grid-auto-flow: dense, to prevent gaps while preserving the visual hierarchy.
 ```
 
 ---
@@ -377,21 +540,69 @@ Can you explain why this is happening within the CSS Grid formatting context and
 
 AI was also used to:
 
-- Organize the project folder structure
+- Plan the project folder structure
 - Explain CSS Cascade Layers
-- Generate initial spacing token systems
-- Review accessibility considerations
-- Verify typography scaling at 200% browser zoom
-- Explain CSS Grid behavior
+- Create reusable design tokens
+- Explain OKLCH color values
+- Review WCAG accessibility considerations
+- Explain fluid typography calculations
+- Explain CSS Grid concepts
 - Review semantic HTML structure
-- Assist with responsive layout debugging
+- Troubleshoot responsive layouts
+- Suggest responsive improvements
+- Review spacing consistency
+- Generate documentation
+- Assist with testing procedures
+- Help prepare the project demonstration script
+
+---
+
+# Future Enhancements
+
+Planned features for future milestones include:
+
+- Functional search
+- Platform filtering
+- Genre filtering
+- Interactive game detail pages
+- User ratings
+- Favorite games
+- Collection management
+- Recently viewed games
+- JavaScript-powered filtering
+- Local storage support
+- Animated UI interactions
+- Expanded accessibility features
+
+---
+
+# License
+
+This project was created for educational purposes as part of the BAS Application Development Capstone course.
+
+---
+
+# Acknowledgments
+
+Special thanks to:
+
+- My course instructor
+- BAS Application Development program
+- MDN Web Docs
+- W3C CSS Specifications
+- GitHub Pages
+- OpenAI ChatGPT for development assistance and technical explanations
 
 ---
 
 # Author
 
-Denniz Garza
+**Denniz Garza**
 
-BAS Application Development
+Bachelor of Applied Science – Application Development
 
-Week 02 Capstone Project
+Capstone Project
+
+Archetype C – Curation & Discovery Portal
+
+Retro Game Discovery Portal
