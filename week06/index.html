@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 06 | Retro Game Discovery Portal</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+        <header class="site-header">
+
+            <div class="brand">
+                <span class="brand__icon" aria-hidden="true">🎮</span>
+
+                <div class="brand__content">
+                    <p class="brand__eyebrow">BAS Application Development</p>
+                    <h1 class="brand__title">Retro Game Discovery</h1>
+                </div>
+            </div>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <ul class="site-nav__list">
+                    <li>
+                        <a class="site-nav__link site-nav__link--active"
+                           href="#discover">
+                            Discover
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="site-nav__link"
+                           href="#featured">
+                            Featured
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="site-nav__link"
+                           href="#favorites">
+                            Favorites
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <!-- =========================
+             MAIN APPLICATION
+        ========================== -->
+        <div class="app-layout">
+
+            <!-- =========================
+                 SIDEBAR
+            ========================== -->
+            <aside class="filter-sidebar"
+                   aria-label="Game filters">
+
+                <div class="sidebar-wrapper">
+
+                    <div class="sidebar-header">
+                        <p class="section-label">Discovery</p>
+                        <h2>Filter Games</h2>
+                    </div>
+
+
+                    <!-- Search -->
+                    <div class="filter-group">
+
+                        <label for="game-search">
+                            Search
+                        </label>
+
+                        <input
+                            id="game-search"
+                            class="search-input"
+                            type="search"
+                            placeholder="Search games..."
+                        >
+
+                    </div>
+
+
+                    <!-- Console Filter -->
+                    <fieldset class="filter-group">
+
+                        <legend>Console</legend>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="console" value="nes">
+                            <span>NES</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="console" value="snes">
+                            <span>SNES</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="console" value="genesis">
+                            <span>Sega Genesis</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="console" value="arcade">
+                            <span>Arcade</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <!-- Genre Filter -->
+                    <fieldset class="filter-group">
+
+                        <legend>Genre</legend>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="genre" value="action">
+                            <span>Action</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="genre" value="platformer">
+                            <span>Platformer</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="genre" value="rpg">
+                            <span>RPG</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox" name="genre" value="racing">
+                            <span>Racing</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <!-- Sidebar Context-Aware Card -->
+                    <section class="sidebar-feature"
+                             aria-labelledby="sidebar-feature-title">
+
+                        <p class="section-label">Sidebar Preview</p>
+
+                        <article class="card card--sidebar">
+
+                            <div class="card__media">
+                                <div class="game-art game-art--zelda"
+                                     role="img"
+                                     aria-label="Stylized retro game artwork for The Legend of Zelda">
+                                    <span class="game-art__symbol">◆</span>
+                                </div>
+                            </div>
+
+                            <div class="card__content">
+
+                                <span class="card__badge">
+                                    Classic Pick
+                                </span>
+
+                                <h3 class="card__title"
+                                    id="sidebar-feature-title">
+                                    The Legend of Zelda
+                                </h3>
+
+                                <p class="card__description">
+                                    Explore a legendary world filled with
+                                    dungeons, puzzles, and hidden secrets.
+                                </p>
+
+                                <a class="card__button"
+                                   href="#zelda">
+                                    Explore Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </section>
+
+                </div>
+
+            </aside>
+
+
+            <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
+            <main class="main-content"
+                  id="discover">
+
+                <div class="main-content__container">
+
+                    <!-- Search / Intro -->
+                    <section class="content-intro"
+                             aria-labelledby="catalog-title">
+
+                        <div class="content-intro__text">
+
+                            <p class="section-label">
+                                Curated Collection
+                            </p>
+
+                            <h2 id="catalog-title">
+                                Discover Retro Classics
+                            </h2>
+
+                            <p>
+                                Browse a collection of influential games
+                                spanning classic consoles, arcades, and
+                                generations of gaming history.
+                            </p>
+
+                        </div>
+
+                        <div class="results-count"
+                             aria-label="Number of games displayed">
+                            <strong>05</strong>
+                            <span>Games Found</span>
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================
+                         ASYMMETRIC GAME GRID
+                    ========================== -->
+                    <section class="game-grid"
+                             id="featured"
+                             aria-label="Featured retro games">
+
+                        <!-- CARD 1: HERO -->
+                        <article class="card card--hero">
+
+                            <div class="card__media">
+
+                                <div class="game-art game-art--mario"
+                                     role="img"
+                                     aria-label="Stylized retro artwork inspired by Super Mario Bros.">
+                                    <span class="game-art__symbol">★</span>
+                                </div>
+
+                            </div>
+
+                            <div class="card__content">
+
+                                <div class="card__meta">
+                                    <span class="card__badge">
+                                        Featured
+                                    </span>
+
+                                    <span class="card__year">
+                                        1985
+                                    </span>
+                                </div>
+
+                                <h3 class="card__title">
+                                    Super Mario Bros.
+                                </h3>
+
+                                <p class="card__description">
+                                    Jump into one of gaming's most iconic
+                                    platforming adventures. Explore colorful
+                                    worlds, collect power-ups, and help Mario
+                                    reach the end of each challenging level.
+                                </p>
+
+                                <div class="card__details">
+                                    <span>NES</span>
+                                    <span>Platformer</span>
+                                    <span>Nintendo</span>
+                                </div>
+
+                                <a class="card__button"
+                                   href="#mario">
+                                    View Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 2 -->
+                        <article class="card">
+
+                            <div class="card__media">
+
+                                <div class="game-art game-art--sonic"
+                                     role="img"
+                                     aria-label="Stylized retro artwork inspired by Sonic the Hedgehog">
+                                    <span class="game-art__symbol">⚡</span>
+                                </div>
+
+                            </div>
+
+                            <div class="card__content">
+
+                                <div class="card__meta">
+                                    <span class="card__badge">
+                                        Speed Run
+                                    </span>
+
+                                    <span class="card__year">
+                                        1991
+                                    </span>
+                                </div>
+
+                                <h3 class="card__title">
+                                    Sonic the Hedgehog
+                                </h3>
+
+                                <p class="card__description">
+                                    Race through colorful stages at
+                                    incredible speed.
+                                </p>
+
+                                <div class="card__details">
+                                    <span>Genesis</span>
+                                    <span>Action</span>
+                                </div>
+
+                                <a class="card__button"
+                                   href="#sonic">
+                                    View Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 3 -->
+                        <article class="card">
+
+                            <div class="card__media">
+
+                                <div class="game-art game-art--metroid"
+                                     role="img"
+                                     aria-label="Stylized retro artwork inspired by Metroid">
+                                    <span class="game-art__symbol">◈</span>
+                                </div>
+
+                            </div>
+
+                            <div class="card__content">
+
+                                <div class="card__meta">
+                                    <span class="card__badge">
+                                        Sci-Fi
+                                    </span>
+
+                                    <span class="card__year">
+                                        1986
+                                    </span>
+                                </div>
+
+                                <h3 class="card__title">
+                                    Metroid
+                                </h3>
+
+                                <p class="card__description">
+                                    Explore a mysterious alien world while
+                                    discovering new abilities and secrets.
+                                </p>
+
+                                <div class="card__details">
+                                    <span>NES</span>
+                                    <span>Adventure</span>
+                                </div>
+
+                                <a class="card__button"
+                                   href="#metroid">
+                                    View Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 4 -->
+                        <article class="card">
+
+                            <div class="card__media">
+
+                                <div class="game-art game-art--streetfighter"
+                                     role="img"
+                                     aria-label="Stylized retro artwork inspired by Street Fighter II">
+                                    <span class="game-art__symbol">✦</span>
+                                </div>
+
+                            </div>
+
+                            <div class="card__content">
+
+                                <div class="card__meta">
+                                    <span class="card__badge">
+                                        Arcade
+                                    </span>
+
+                                    <span class="card__year">
+                                        1991
+                                    </span>
+                                </div>
+
+                                <h3 class="card__title">
+                                    Street Fighter II
+                                </h3>
+
+                                <p class="card__description">
+                                    Choose your fighter and compete in
+                                    legendary arcade battles.
+                                </p>
+
+                                <div class="card__details">
+                                    <span>Arcade</span>
+                                    <span>Fighting</span>
+                                </div>
+
+                                <a class="card__button"
+                                   href="#street-fighter">
+                                    View Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- CARD 5 -->
+                        <article class="card"
+                         id="favorites">
+
+                            <div class="card__media">
+
+                                <div class="game-art game-art--chrono"
+                                     role="img"
+                                     aria-label="Stylized retro artwork inspired by Chrono Trigger">
+                                    <span class="game-art__symbol">⌁</span>
+                                </div>
+
+                            </div>
+
+                            <div class="card__content">
+
+                                <div class="card__meta">
+                                    <span class="card__badge">
+                                        RPG Favorite
+                                    </span>
+
+                                    <span class="card__year">
+                                        1995
+                                    </span>
+                                </div>
+
+                                <h3 class="card__title">
+                                    Chrono Trigger
+                                </h3>
+
+                                <p class="card__description">
+                                    Travel across time in a legendary
+                                    role-playing adventure.
+                                </p>
+
+                                <div class="card__details">
+                                    <span>SNES</span>
+                                    <span>RPG</span>
+                                </div>
+
+                                <a class="card__button"
+                                   href="#chrono-trigger">
+                                    View Game
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </section>
+
+                </div>
+
+            </main>
+
+        </div>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+        <footer class="site-footer">
+
+            <p>
+                © 2026 Retro Game Discovery Portal
+            </p>
+
+            <p>
+                BAS Application Development Capstone
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
